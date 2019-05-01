@@ -6,12 +6,8 @@ public class _2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		int n_coin=sc.nextInt();
-		int coins[]=new int[n_coin];
-		for(int i=0;i<n_coin;i++)
-		{
-			coins[i]=sc.nextInt();
-		}
+		int n_coin=2;
+		int coins[]=new int[]{1,2};
 		int amt=sc.nextInt();
 		System.out.println(changeCoins(n_coin,coins,amt));
 		sc.close();
