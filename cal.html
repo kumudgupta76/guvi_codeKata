@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>Calculator</title>
+<style>
+body
+{
+background-color:#39B7A2;
+}
+.box
+{
+background-color:#031C17;
+height:400px;
+width:300px;
+border-radius:10px;
+position:relative;
+top:80px;
+left:40%;
+}
+.black{
+  background-color: #E91430;
+  border-radius: 8px;
+  text-align: center;
+   border: none;
+   color: white;
+   padding: 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+  position: relative;
+  margin-left:8px;
+}
+.display
+{
+background-color:#222;
+width:220px;
+position:relative;
+left:15px;
+top:20px;
+height:40px;
+}
+.display input
+{
+position:relative;
+left:2px;
+top:2px;
+height:35px;
+color:black;
+background-color:#bccd95;
+font-size:21px;
+text-align:right;
+}
+.pink{
+  background-color: #EF7F1D;
+  border-radius: 8px;
+  text-align: center;
+   border: none;
+   color: white;
+   padding: 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+  position: relative;
+  margin-left:2px;
+}
+.keys
+{
+position:relative;
+top:15px;
+}
+p
+{
+line-height:10px;
+}
+</style>
+<script src="calc1.js"></script>
+
+<body>
+<div class="box">
+<div class="display"><input type="text" size=18px readonly id="di"></div>
+<div class="keys">
+<p><input type="button" value=7 onclick='v("7")'class="button black">
+<input type="button" value=8 onclick='v("8")' class="button black">
+<input type="button" value=9 onclick='v("9")' class="button black">
+<input type="button" value=/ onclick='v("/")' class="button pink">
+<input type="button" value=* onclick='v("*")' class="button pink"></p>
+<p><input type="button" value=4 onclick='v("4")' class="button black">
+<input type="button" value=5 onclick='v("5")' class="button black">
+<input type="button" value=6 onclick='v("6")' class="button black">
+<input type="button" value=+ onclick='v("+")' class="button pink">
+</p>
+<p><input type="button" value=1 onclick='v("1")' class="button black">
+<input type="button" value=2 onclick='v("2")' class="button black">
+<input type="button" value=3 onclick='v("3")' class="button black">
+<input type="button" value=- onclick='v("-")' class="button pink">
+</p>
+<p><input type="button" value=0 onclick='v("0")' class="button black">
+<input type="button" value=. onclick='v(".")' class="button black">
+<input type="button" value=C onclick='c("")' class="button black">
+<input type="button" value== onclick='e()'class="button pink">
+</p>
+
+</div>
+</div>
+<script>
+function c(val)
+{
+document.getElementById("di").value=val;
+}
+function v(val)
+{
+document.getElementById("di").value+=val;
+}
+function e()
+{
+try
+{
+  c(eval(document.getElementById("di").value))
+}
+catch(e)
+{
+  c('Error')
+}
+}
+</script>
+</body>
+</html>
